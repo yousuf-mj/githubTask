@@ -1,17 +1,33 @@
 import axios from 'axios';
 import * as dotenv from "dotenv";
+import { RepoResponse } from '../types/github';
 
 dotenv.config();
 
-const getUser = (username: string) => {
-    const url = `${process.env.GITHUB_API}/users/${username}`;
-    return axios.get(url);
+const getUser = async (username: string) => {
+    const url: string = `${process.env.GITHUB_API}/users/${username}`;
+    return await axios.get(url);
 }
 
-const getRepos = (username: string) => {
-    const url = `${process.env.GITHUB_API}/users/${username}/repos`;
-    return axios.get(url);
+const getRepos = async (username: string) => {
+    const url: string = `${process.env.GITHUB_API}/users/${username}/repos`;
+    return await axios.get(url);
+}
+
+const favouriteLanguage = async (username: string) => {
+    const repos = await getRepos(username);
+
+    const languages = repos.data
+        .filter((repo: RepoResponse) => repo.language !== null)
+        .map((repo: RepoResponse) => repo.language);
+
+    const favourite = languages.sort((a: string,b: string) =>
+        languages.filter((v: string) => v===a).length
+        - languages.filter((v: string) => v===b).length
+    ).pop();
+
+    return favourite;
 }
 
 
-export {getUser, getRepos}
+export {getUser, getRepos, favouriteLanguage}

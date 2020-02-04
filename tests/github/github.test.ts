@@ -1,4 +1,4 @@
-import { getUser, getRepos } from '../../src/github/index';
+import { getUser, getRepos, favouriteLanguage } from '../../src/github/index';
 import axios, { AxiosResponse } from 'axios'
 
 jest.mock('axios');
@@ -11,7 +11,7 @@ describe('Github API', () => {
         username = 'yousufmj'
     });
 
-    it('should return basic information about a github user', async () => {
+    it('should return basic information about a user', async () => {
         const mockResponse = require('../fixtures/github/userResponse.json');
         mockedAxios.get.mockResolvedValue(mockResponse);
 
@@ -21,7 +21,7 @@ describe('Github API', () => {
         expect(user.data.login).toEqual(username);
     });
 
-    it.only('should return all repos belonging to a user', async () => {
+    it('should return all repos belonging to a user', async () => {
         const mockResponse = require('../fixtures/github/repoResponse.json');
         mockedAxios.get.mockResolvedValue(mockResponse);
 
@@ -36,5 +36,17 @@ describe('Github API', () => {
             }
             )
         );
+    });
+
+    it.only('should return favourite language of a user', async () => {
+        const mockResponse = require('../fixtures/github/repoResponse.json');
+        const expectLanguage = 'JavaScript';
+
+        mockedAxios.get.mockResolvedValue(mockResponse);
+
+        const language = await favouriteLanguage(username);
+
+        expect(language).toEqual(expectLanguage);
+
     });
 });
