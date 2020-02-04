@@ -44,7 +44,8 @@ describe('Github API', () => {
 
         const language = await favouriteLanguage(username);
 
-        expect(language).toEqual(expectLanguage);
+        expect(language.username).toEqual(username);
+        expect(language.language).toEqual(expectLanguage);
 
     });
 });

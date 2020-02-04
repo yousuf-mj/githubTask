@@ -5,15 +5,17 @@
     "scripts": {
         "start": "npm run build && node dist/index",
         "start:dev": "npm run build && nodemon ./dist/index -e ts",
-        "build": "tsc",
+        "build": "tsc && npm run views",
         "test": "jest --verbose",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "views": "cp -r ./src/views/ ./dist/views/"
     },
     "dependencies": {
         "axios": "^0.19.2",
         "cookie-parser": "~1.4.4",
         "debug": "~2.6.9",
         "dotenv": "^8.2.0",
+        "ejs": "^3.0.1",
         "express": "~4.16.1",
         "http-errors": "~1.6.3",
         "jade": "~1.11.0",
