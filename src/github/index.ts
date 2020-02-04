@@ -6,7 +6,11 @@ dotenv.config();
 
 const getUser = async (username: string) => {
     const url: string = `${process.env.GITHUB_API}/users/${username}`;
-    return await axios.get(url);
+    try {
+        return await axios.get(url);
+    } catch (error) {
+        throw new error('Error with request');
+    }
 }
 
 const getRepos = async (username: string) => {

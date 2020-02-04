@@ -27,8 +27,6 @@ describe('Github API', () => {
 
         const repos: AxiosResponse = await getRepos(username);
 
-        console.log(JSON.stringify(repos.data));
-
         expect(repos.status).toEqual(200);
         expect(repos.data[0]).toEqual(
             expect.objectContaining({
@@ -38,7 +36,7 @@ describe('Github API', () => {
         );
     });
 
-    it.only('should return favourite language of a user', async () => {
+    it('should return favourite language of a user', async () => {
         const mockResponse = require('../fixtures/github/repoResponse.json');
         const expectLanguage = 'JavaScript';
 
