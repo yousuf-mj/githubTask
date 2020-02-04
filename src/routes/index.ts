@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
         const username = req.body.username;
-        const url = 'http://localhost:8080/api/language';
+        const url = `${process.env.SITE_URL}api/language`;
         const language = axios.post(url, {username});
 
         language.then(r => {
