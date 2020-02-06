@@ -2,6 +2,7 @@
 
 The purpose of this application is to be able to be able to get basic information
 from a github user
+This application can also be found on 
 
 ## Set up
 
