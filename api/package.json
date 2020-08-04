@@ -10,6 +10,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@types/mongoose": "^5.7.34",
         "axios": "^0.19.2",
         "braces": ">=2.3.1",
         "clean-css": ">=4.1.11",
@@ -22,6 +23,7 @@
         "express": "~4.16.1",
         "http-errors": "~1.6.3",
         "jade": "~1.11.0",
+        "mongoose": "^5.9.27",
         "morgan": "~1.9.1"
     },
     "devDependencies": {
@@ -37,6 +39,6 @@
         "nodemon": "^2.0.4",
         "sinon": "^8.1.1",
         "ts-jest": "^25.2.0",
-        "typescript": "^3.7.5"
+        "typescript": "^3.9.7"
     }
 }
