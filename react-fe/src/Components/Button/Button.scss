@@ -1,0 +1,14 @@
+$base-color: #34b7d1;
+/* Submit Button */
+button[type="submit"] {
+    border: 3px solid darken($base-color, 5%);
+    background-color: lighten($base-color, 5%);
+    cursor: pointer;
+    color: lighten($base-color, 50%);
+    float: right;
+    font-size: 1.5em;
+    padding: 0.25em 1em;
+}
+button[type="submit"]:hover {
+    background-color: darken($base-color, 5%);
+}

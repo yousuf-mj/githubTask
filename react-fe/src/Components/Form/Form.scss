@@ -1,0 +1,25 @@
+$base-color: #34b7d1;
+form {
+    font-size: 1.2em;
+    margin: 2em auto;
+    padding: 2em;
+    width: 50%;
+}
+
+input,
+label {
+    padding: 0 0.5em 0 0.5em;
+    color: darken($base-color, 30%);
+    font-weight: bold;
+}
+
+input[type="text"] {
+    font-size: 2em;
+    margin: 0.2em 0 1em;
+    padding: 0.25em;
+    width: 100%;
+}
+
+.form-error {
+    color: #de1b1b;
+}

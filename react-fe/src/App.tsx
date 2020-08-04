@@ -1,8 +1,8 @@
 import React from "react";
-import Form from "./Components/Form";
+import SimpleForm from "./Components/Form";
 
 const App = () => {
-    return <Form />;
+    return <SimpleForm />;
 };
 
 export default App;
