@@ -2,24 +2,30 @@ $base-color: #34b7d1;
 form {
     font-size: 1.2em;
     margin: 2em auto;
-    padding: 2em;
-    width: 50%;
 }
 
 input,
 label {
     padding: 0 0.5em 0 0.5em;
     color: darken($base-color, 30%);
-    font-weight: bold;
+    font-size: 15px;
 }
 
 input[type="text"] {
-    font-size: 2em;
-    margin: 0.2em 0 1em;
-    padding: 0.25em;
+    font-size: 20px;
+    margin: 5px 0;
+    padding: 20px;
     width: 100%;
+    border: 1px solid #dbdbdb;
 }
 
 .form-error {
     color: #de1b1b;
+}
+
+input:active,
+input:focus {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
 }

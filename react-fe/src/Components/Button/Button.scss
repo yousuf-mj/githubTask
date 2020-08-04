@@ -5,9 +5,9 @@ button[type="submit"] {
     background-color: lighten($base-color, 5%);
     cursor: pointer;
     color: lighten($base-color, 50%);
-    float: right;
-    font-size: 1.5em;
-    padding: 0.25em 1em;
+    font-size: 25px;
+    padding: 5px 15px;
+    margin: 10px 0;
 }
 button[type="submit"]:hover {
     background-color: darken($base-color, 5%);
